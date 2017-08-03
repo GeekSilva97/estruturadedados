@@ -38,5 +38,9 @@ public class No {
 	public void setAnterior(No anterior) {
 		this.anterior = anterior;
 	}
+	
+	public String toString(){
+		return ""+valor;
+	}
 
 }

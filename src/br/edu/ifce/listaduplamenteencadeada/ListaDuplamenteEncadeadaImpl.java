@@ -1,5 +1,9 @@
 package br.edu.ifce.listaduplamenteencadeada;
 
+import java.util.concurrent.SynchronousQueue;
+
+import javax.swing.plaf.synth.SynthSliderUI;
+
 public class ListaDuplamenteEncadeadaImpl implements ListaDuplamenteEncadeada {
 
 	public int tamanho = 0;
@@ -106,13 +110,46 @@ public class ListaDuplamenteEncadeadaImpl implements ListaDuplamenteEncadeada {
 		noPosicao.getProximo().setAnterior(noPosicao.getAnterior());
 		noPosicao.setProximo(null);
 		noPosicao.setAnterior(null);
+		tamanho--;
 		return noPosicao.getValor();
 	}
 
 	@Override
 	public void ordenaLista() {
-		// TODO Auto-generated method stub
 		
+		// [5, 2, -1]
+		// 5 > 2
+		// valor = 2
+		// [2, 5, 1]
+		
+		No atual = header;
+		int j;
+		for(int i=0; i<tamanho-1; i++){
+			No prox = atual.getProximo();
+			j = i+1;
+			
+			while(j<tamanho){
+//				System.out.println("Atual : "+atual+"\nProximo : "+prox);
+				
+				// fazendo swipe()
+				if(atual.getValor() > prox.getValor()){
+					// trocando valores
+					Integer valor = prox.getValor();
+					prox.setValor(atual.getValor());
+					atual.setValor(valor);
+				}
+				
+				prox = prox.getProximo();
+				j++;
+			}
+			
+			atual = atual.getProximo();
+		}
+		
+	}
+	
+	public No min(){
+		return null;
 	}
 
 	@Override

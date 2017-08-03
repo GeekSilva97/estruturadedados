@@ -20,7 +20,11 @@ public class TesteLista {
 		lista.insereInicio(11);
 		lista.insereInicio(17);
 		lista.imprimir();
-		lista.removePosicao(2);
+//		lista.removePosicao(2);
+		lista.imprimir();
+		
+		lista.ordenaLista();
+		
 		lista.imprimir();
 	}
 	
