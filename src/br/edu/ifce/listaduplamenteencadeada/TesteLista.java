@@ -18,13 +18,10 @@ public class TesteLista {
 		lista.removeFinal();
 		lista.imprimir();
 		lista.insereInicio(11);
-		lista.insereInicio(17);
-		lista.imprimir();
-//		lista.removePosicao(2);
+		lista.insereInicio(17);		
 		lista.imprimir();
 		
-		lista.ordenaLista();
-		
+		lista.insereOrdenado(-5);
 		lista.imprimir();
 	}
 	

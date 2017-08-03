@@ -63,8 +63,10 @@ public class ListaDuplamenteEncadeadaImpl implements ListaDuplamenteEncadeada {
 
 	@Override
 	public Integer insereOrdenado(Integer valor) {
-		// TODO Auto-generated method stub
-		return null;
+		insereFinal(valor);
+		ordenaLista();		
+		tamanho++;
+		return valor;
 	}
 
 	@Override
